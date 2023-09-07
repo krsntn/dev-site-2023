@@ -1,0 +1,33 @@
+@keyframes grow {
+  0% {
+    stroke-dasharray: 0 var(--offset);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  to {
+    stroke-dasharray: var(--offset) 0;
+    opacity: 1;
+  }
+}
+
+.logo {
+  width: 1rem;
+  height: 1rem;
+  --offset: 2800px;
+}
+
+.logo path {
+  fill: none;
+  stroke-dashoffset: 1478px;
+  stroke-dasharray: var(--offset) 0;
+  animation: grow 10s ease forwards;
+  stroke: #fff;
+  stroke-width: 10px;
+  animation-delay: 0s;
+}
+
+.logo.black path {
+  stroke: #000;
+}

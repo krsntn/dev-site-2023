@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Chrome Extension",
+    "description": "Customize your own speed control hotkeys in Youtube",
+    "icons": ["fab_react", "fab_js", "fab_css3-alt", "fab_google"],
+    "link": {
+      "href": "https://chrome.google.com/webstore/detail/youtube-speed-control-hot/opcjoeippmphadnkmkjocmingcbpmepn",
+      "text": "Chrome Web Store"
+    }
+  },
+  {
+    "title": "QR Code Generator",
+    "description": "A minimalist website to generate QR code",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://qrcode.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Keyboard Button Test",
+    "description": "Assess keyboard performance, check button functionality, and evaluate key responsiveness",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://keytest.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Currency Converter",
+    "description": "Set custom rates, convert with personal rates. Simple, no internet required",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://currency.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Electricity Bill Calculator",
+    "description": "Forecast your electricity bill",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://electricity-bill.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Typing Test",
+    "description": "Test your typing speed",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://types.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "1to30 - Game",
+    "description": "Click from 1 to 30 as fast as you can",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://1to30.krsn.xyz",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Malaysia Petrol Price",
+    "description": "A site that display the latest Malaysia petrol price",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://petrol.krsn.xyz",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Time Progress",
+    "description": "A site that display the current progression of time",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://time-progress.krsn.xyz",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Notification Generator",
+    "description": "Lock screen notification generator",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://notification-generator.krsn.xyz",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Bottom Scroller",
+    "description": "A bookmarklet to scroll to the bottom of a webpage",
+    "icons": ["fab_js", "fab_css3-alt", "fas_globe-asia"],
+    "link": {
+      "href": "https://bottom-scroller.krsn.xyz",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Snake Game",
+    "description": "Snake game developed in HTML5 Canvas",
+    "icons": ["fab_html5", "fab_js", "fab_codepen", "fab_github"],
+    "link": {
+      "href": "https://codepen.io/anon/pen/eLJGBm",
+      "text": "Learn More"
+    }
+  }
+]

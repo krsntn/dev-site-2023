@@ -1,0 +1,36 @@
+.loader {
+  --size: 1rem;
+  --border-size: 2px;
+  --border-radius: 4px;
+  --color: hsl(var(--foreground));
+  width: var(--size);
+  height: var(--size);
+  display: inline-block;
+  position: relative;
+  border: var(--border-size) solid var(--color);
+  box-sizing: border-box;
+  animation: fill 2s linear infinite alternate;
+  color: var(--color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: var(--border-size) solid var(--color);
+  width: calc(var(--size) - 70%);
+  height: calc(var(--size) - 40%);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+@keyframes fill {
+  0% {
+    box-shadow: 0 0 inset;
+  }
+  100% {
+    box-shadow: 0 calc(-1 * var(--size)) inset;
+  }
+}
