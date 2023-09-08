@@ -1,7 +1,8 @@
+import stack from "@/src/data/stack.json";
+import { GithubDataType } from "@/src/lib/writing";
 import { ExternalLink, Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import stack from "@/src/data/stack.json";
 
 const gridClasses = "grid md:grid-cols-[100px_1fr] gap-2 md:gap-6";
 const labelClasses =
@@ -23,15 +24,16 @@ async function getGithubData() {
   );
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    console.error("Failed to fetch data");
+    return [];
   }
 
   return res.json();
 }
 
 export default async function Dev() {
-  // const githubData = await getGithubData();
-  const githubData: Array<GithubDataType> = [];
+  const githubData = await getGithubData();
+  // const githubData: Array<GithubDataType> = [];
 
   return (
     <div className="leading-6 px-4 pt-14 lg:pt-20 pb-16">
@@ -108,7 +110,7 @@ export default async function Dev() {
         <div className={gridClasses}>
           <div className={labelClasses}>Repo</div>
           <div className="flex flex-col gap-1">
-            {githubData.map((x, index) => (
+            {githubData.map((x: GithubDataType, index: number) => (
               <Link
                 key={index}
                 href={x.html_url}
