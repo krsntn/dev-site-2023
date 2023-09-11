@@ -11,7 +11,7 @@ async function getPost({ slug }: { slug: string }) {
   });
 
   if (res.items.length <= 0) {
-    // throw new Error("No post found");
+    throw new Error("No article found");
   }
 
   return res.items[0];
@@ -24,6 +24,8 @@ type TFeaturedImage = {
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const post = await getPost({ slug });
+  if (!post) return null;
+
   const featuredImg = (post.fields.featuredImage as TFeaturedImage).fields.file
     .url;
 
