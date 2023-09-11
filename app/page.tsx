@@ -1,8 +1,9 @@
+import { MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import LocationImg from "../public/images/location.png";
 import ProfileImg from "../public/images/profile.png";
-import { MapPin } from "lucide-react";
 
 const gridClasses = "grid md:grid-cols-[100px_1fr] gap-2 md:gap-6";
 const labelClasses =
@@ -20,6 +21,17 @@ const link = "text-blue-500 underline-offset-2 hover:underline";
 export default function Home() {
   return (
     <div className="leading-6 px-4 pt-14 lg:pt-20 pb-16">
+      {/* Google tag (gtag.js) */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-1PZPG4YFT7" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-1PZPG4YFT7');
+        `}
+      </Script>
       <div className="mx-auto max-w-xl flex flex-col gap-16">
         <div className={gridClasses}>
           <div className={labelClasses}>
