@@ -62,7 +62,7 @@ export default async function Design() {
                   alt="logo"
                   width={40}
                   height={40}
-                  className="rounded"
+                  className="rounded cursor-pointer"
                 />
               </Link>
             ))}
