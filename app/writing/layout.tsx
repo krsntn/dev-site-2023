@@ -23,7 +23,7 @@ export default async function WritingLayout({
   const items = await getBlog();
 
   return (
-    <div className="relative min-h-screen h-full w-full flex justify-between">
+    <div className="relative lg:min-h-screen lg:h-full lg:w-full flex justify-between">
       <WritingSideNav posts={items} />
       <main className="flex-1 overflow-y-auto">{children}</main>
     </div>

@@ -8,7 +8,7 @@ const WritingSideNav = ({ posts }: { posts: any[] }) => {
 
   return (
     <div
-      className={`overflow-y-auto border-l border-r border-zinc-200 dark:border-zinc-700 w-full lg:w-80 h-[100dvh] bg-zinc-50 dark:bg-zinc-900 ${
+      className={`overflow-y-auto border-l border-r border-zinc-200 dark:border-zinc-700 w-full lg:w-80 bg-zinc-50 dark:bg-zinc-900 ${
         path !== "writing" ? "hidden lg:block" : ""
       }`}
     >
