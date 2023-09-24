@@ -32,17 +32,13 @@ const SideNav = () => {
   return (
     <div
       className={`${
-        isOpen ? "w-full" : "w-0"
-      } lg:w-auto z-50 absolute lg:static bg-black/50`}
+        isOpen ? "translate-x-0" : "-translate-x-[100%] lg:translate-x-0"
+      } lg:w-auto z-50 absolute lg:static transition-transform duration-500 ease-in-out`}
     >
       <div
-        className={twMerge(
-          `p-4 bg-zinc-50 dark:bg-zinc-900
-          overflow-y-auto
+        className={`p-4 overflow-y-auto
           h-[100dvh] w-64 lg:w-48
-          text-[12px] font-bold flex flex-col justify-between transition ease-in-out`,
-          isOpen ? "translate-x-0" : "-translate-x-[100%] lg:translate-x-0",
-        )}
+          text-[12px] font-bold flex flex-col justify-between bg-zinc-50 dark:bg-zinc-900 transition-colors duration-1000 ease-linear`}
       >
         <div>
           <div className="mb-8">

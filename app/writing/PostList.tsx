@@ -9,11 +9,11 @@ export default function PostList({ posts }: { posts: any[] }) {
   const path = usePathname().split("/").slice(-1)[0];
 
   return (
-    <ul className="flex flex-col">
+    <ul className="flex flex-col pb-28">
       {posts.map((x, index) => (
         <li
           key={index}
-          className="border-b border-zinc-200 dark:border-zinc-700"
+          className="first:border-t border-b border-zinc-200 dark:border-zinc-700"
         >
           <Link href={`/writing/${x.fields.slug}`} rel="noopener noreferrer">
             <Button

@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="text-sm transition ease-in-out">
+      <body className="text-sm transition ease-linear duration-1000">
         <Providers>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative min-h-screen w-full flex justify-between">
