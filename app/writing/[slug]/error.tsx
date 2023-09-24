@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { ShieldAlert } from "lucide-react";
 
-export default function Error({ error }: { error: Error | undefined }) {
+export default function Error({ error }: { error: Error }) {
   useEffect(() => {
     if (error) {
       console.error(error);
