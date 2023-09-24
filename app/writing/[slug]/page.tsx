@@ -3,16 +3,13 @@ import Image from "next/image";
 import { Document } from "@contentful/rich-text-types";
 import PostBody from "./postBody";
 import { format } from "date-fns";
+import Error from "./error";
 
 async function getPost({ slug }: { slug: string }) {
   const res = await client.getEntries({
     content_type: "pageBlogPost",
     "fields.slug": slug,
   });
-
-  if (res.items.length <= 0) {
-    throw new Error("No article found");
-  }
 
   return res.items[0];
 }
@@ -24,7 +21,7 @@ type TFeaturedImage = {
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const post = await getPost({ slug });
-  if (!post) return null;
+  if (!post) return <Error error={undefined} />;
 
   const featuredImg = (post.fields.featuredImage as TFeaturedImage).fields.file
     .url;

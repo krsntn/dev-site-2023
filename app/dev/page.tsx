@@ -1,6 +1,6 @@
 import stack from "@/src/data/stack.json";
 import { GithubDataType } from "@/src/lib/writing";
-import { ExternalLink, Loader2 } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,6 +21,7 @@ const posClasses = "text-zinc-500 dark:text-zinc-400";
 async function getGithubData() {
   const res = await fetch(
     "https://api.github.com/users/krsntn/repos?sort=pushed",
+    { next: { revalidate: 3600 } },
   );
 
   if (!res.ok) {
@@ -173,7 +174,6 @@ export default async function Dev() {
             </div>
           </div>
         </div>
-        <Loader2 className="animate-spin" size={16} strokeWidth={2} />
       </div>
     </div>
   );

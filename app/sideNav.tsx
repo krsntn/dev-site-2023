@@ -127,7 +127,7 @@ const SideNav = () => {
             </div>
 
             <ul className="flex flex-col gap-1">
-              {projects.map((x, index) => (
+              {projects.slice(0, 4).map((x, index) => (
                 <li key={index}>
                   <Link
                     href={x.link.href}
@@ -151,6 +151,19 @@ const SideNav = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href={"/projects"} onClick={() => setIsOpen(false)}>
+                  <Button
+                    variant="ghost"
+                    className={twMerge(buttonClasses, "justify-between gap-3")}
+                  >
+                    <div className="flex items-center overflow-hidden">
+                      <div className="mr-2 h-3 w-3" />
+                      <span className="flex-1 truncate">more...</span>
+                    </div>
+                  </Button>
+                </Link>
+              </li>
             </ul>
           </div>
 
