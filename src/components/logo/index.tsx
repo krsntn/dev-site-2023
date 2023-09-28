@@ -10,7 +10,7 @@ const Logo = () => {
       src="./logo.svg"
       beforeInjection={(svg) => {
         svg.classList.add(css.logo);
-        if (theme === "light") svg.classList.add(css.black);
+        if (theme !== "dark") svg.classList.add(css.black);
       }}
     />
   );
