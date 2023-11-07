@@ -29,29 +29,27 @@ export default async function Post({ params }: { params: { slug: string } }) {
     .url;
 
   return (
-    <div className="leading-6 px-4 pt-14 lg:pt-20 pb-16 min-h-[100dvh]">
-      <div className="mx-auto max-w-xl flex flex-col gap-16">
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-1">
-            <span className="text-[1.5rem] leading-none font-bold text-black dark:text-white">
-              {post.fields.title?.toString()}
-            </span>
-            <span className="text-[12px]">
-              {format(
-                new Date(post.fields.publishedDate?.toString() as string),
-                "MMM yyyy",
-              )}
-            </span>
-          </div>
-          <Image
-            src={`https:${featuredImg}`}
-            width={600}
-            height={100}
-            alt="featured image"
-            className="rounded"
-          />
-          <PostBody content={post.fields.content as Document} />
+    <div className="leading-6 px-4 pt-14 lg:pt-20 pb-20">
+      <div className="mx-auto max-w-xl flex flex-col gap-6">
+        <div className="flex flex-col gap-1">
+          <span className="text-[1.5rem] leading-none font-bold text-black dark:text-white">
+            {post.fields.title?.toString()}
+          </span>
+          <span className="text-[12px]">
+            {format(
+              new Date(post.fields.publishedDate?.toString() as string),
+              "MMM yyyy",
+            )}
+          </span>
         </div>
+        <Image
+          src={`https:${featuredImg}`}
+          width={600}
+          height={100}
+          alt="featured image"
+          className="rounded"
+        />
+        <PostBody content={post.fields.content as Document} />
       </div>
     </div>
   );
