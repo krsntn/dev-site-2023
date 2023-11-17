@@ -117,7 +117,7 @@ export default async function Photography() {
             <div className="text-right text-[10px]">
               to see more photos, hop over to{" "}
               <Link
-                href="https://www.instagram.com/krsn.jpg/"
+                href="https://www.instagram.com/krsn.jpeg/"
                 className="text-blue-500 underline-offset-2 hover:underline"
               >
                 insta profile
