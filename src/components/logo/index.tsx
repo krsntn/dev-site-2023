@@ -3,14 +3,14 @@ import css from "./logo.module.css";
 import { useTheme } from "next-themes";
 
 const Logo = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   return (
     <ReactSVG
       className="inline-block w-[1rem] h-[1rem]"
       src="./logo.svg"
       beforeInjection={(svg) => {
         svg.classList.add(css.logo);
-        if (theme !== "dark") svg.classList.add(css.black);
+        if (resolvedTheme === "light") svg.classList.add(css.black);
       }}
     />
   );

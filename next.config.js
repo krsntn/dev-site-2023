@@ -8,6 +8,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "git-fork.com",
+      },
+      {
+        protocol: "https",
         hostname: "pbs.twimg.com",
       },
       {
