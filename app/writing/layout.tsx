@@ -2,6 +2,8 @@ import * as contentful from "contentful";
 import { client } from "@/src/lib/contentful/client";
 import WritingSideNav from "./writingSideNav";
 
+export const revalidate = 60;
+
 type BlogPostSkeleton = {
   contentTypeId: "pageBlogPost";
   fields: { publishedDate: contentful.EntryFieldTypes.Date };
