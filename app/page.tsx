@@ -96,7 +96,7 @@ export default function Home() {
               <span className={onlineFollow}>Follow</span>
             </Link>
             <Link
-              href="https://github.comm/krsntn"
+              href="https://github.com/krsntn"
               className={linkClasses}
               rel="noopener noreferrer"
               target="_blank"
