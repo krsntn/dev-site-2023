@@ -27,7 +27,7 @@ const buttonClasses = "text-[12px] w-full px-2 py-1 flex justify-start";
 
 const SideNav = () => {
   const { isOpen, setIsOpen } = useContext(SideNavContext);
-  const { setTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
 
   return (
     <div
@@ -216,7 +216,9 @@ const SideNav = () => {
           <Button
             variant="secondary"
             className="h-auto p-2"
-            onClick={() => setTheme(theme !== "dark" ? "dark" : "light")}
+            onClick={() =>
+              setTheme(resolvedTheme !== "dark" ? "dark" : "light")
+            }
           >
             <Sun className="h-3 w-3 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-3 w-3 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
