@@ -10,7 +10,6 @@ async function getPost({ slug }: { slug: string }) {
     "fields.slug": slug,
   });
 
-  console.log(res.items);
   if (res.items.length < 1) {
     throw new Error("No article found");
   }

@@ -17,6 +17,7 @@ export default function PostList({ posts }: { posts: any[] }) {
         >
           <Link href={`/writing/${x.fields.slug}`} rel="noopener noreferrer">
             <Button
+              tabIndex={-1}
               variant="ghost"
               className={`h-auto w-full py-2 rounded-none flex flex-col items-start gap-2 text-left text-[12px] ${
                 path === x.fields.slug ? "bg-zinc-200 dark:bg-zinc-700" : ""

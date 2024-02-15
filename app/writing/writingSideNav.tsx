@@ -1,10 +1,22 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import PostList from "./PostList";
+import { useDebounce } from "./useDebounce";
 
 const WritingSideNav = ({ posts }: { posts: any[] }) => {
+  const [searchValue, setSearchValue] = useState("");
   const path = usePathname().split("/").slice(-1)[0];
+  const router = useRouter();
+
+  const debounceSearchValue = useDebounce(searchValue, 400);
+
+  if (debounceSearchValue) {
+    posts = posts.filter((x) =>
+      x.fields.title.toLowerCase().includes(debounceSearchValue.toLowerCase()),
+    );
+  }
 
   return (
     <div
@@ -12,6 +24,19 @@ const WritingSideNav = ({ posts }: { posts: any[] }) => {
         path !== "writing" ? "hidden lg:block" : ""
       }`}
     >
+      <input
+        placeholder="Search"
+        className="bg-transparent p-4 w-full outline-none text-sm"
+        onChange={(e) => setSearchValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            if (posts.length > 0) {
+              router.push(`/writing/${posts[0].fields.slug}`);
+            }
+          }
+        }}
+      />
       <PostList posts={posts} />
     </div>
   );
