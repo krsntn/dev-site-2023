@@ -1,11 +1,20 @@
 [
   {
-    "title": "Chrome Extension",
+    "title": "Chrome Extension - YouTube Speed Control Hotkeys",
     "description": "Customize your own speed control hotkeys in Youtube",
     "icons": ["fab_react", "fab_js", "fab_css3-alt", "fab_google"],
     "link": {
       "href": "https://chrome.google.com/webstore/detail/youtube-speed-control-hot/opcjoeippmphadnkmkjocmingcbpmepn",
       "text": "Chrome Web Store"
+    }
+  },
+  {
+    "title": "Raycast Extension - Guerrilla Mail",
+    "description": "Generate a disposable temporary email address and quickly access any received emails",
+    "icons": [],
+    "link": {
+      "href": "https://www.raycast.com/krsntn/guerrilla-mail",
+      "text": "Raycast Store"
     }
   },
   {
@@ -32,6 +41,15 @@
     "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
     "link": {
       "href": "https://currency.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Chinese Zodiac Ages",
+    "description": "Discover the ages corresponding to each Chinese zodiac sign",
+    "icons": [],
+    "link": {
+      "href": "https://zodiac.krsn.xyz/",
       "text": "Visit Site"
     }
   },
