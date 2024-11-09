@@ -1,5 +1,6 @@
 import { client } from "@/src/lib/contentful/client";
 import Image from "next/image";
+import { richTextFromMarkdown } from "@contentful/rich-text-from-markdown";
 import { Document } from "@contentful/rich-text-types";
 import PostBody from "./postBody";
 import { format } from "date-fns";
@@ -48,7 +49,43 @@ export default async function Post({ params }: { params: { slug: string } }) {
           alt="featured image"
           className="rounded"
         />
-        <PostBody content={post.fields.content as Document} />
+        <PostBody
+          content={
+            post.fields.contentMd
+              ? await richTextFromMarkdown(
+                  post.fields.contentMd.toString(),
+                  async (node) => {
+                    if (node.type) {
+                      return {
+                        nodeType:
+                          node.type === "code"
+                            ? `embedded-entry-block`
+                            : `embedded-${node.type.split("-")[1]}-${node.type.split("-")[2]}`, // e.g., embedded-entry-block
+                        content: [],
+                        data: {
+                          target: {
+                            sys: {
+                              contentType: {
+                                sys: {
+                                  id: "codeBlock",
+                                },
+                              },
+                            },
+                            fields: {
+                              code: node.value,
+                              language: node.lang,
+                            },
+                          },
+                        },
+                      };
+                    }
+
+                    return null;
+                  },
+                )
+              : (post.fields.content as Document)
+          }
+        />
       </div>
     </div>
   );
