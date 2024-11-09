@@ -54,7 +54,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             post.fields.contentMd
               ? await richTextFromMarkdown(
                   post.fields.contentMd.toString(),
-                  async (node) => {
+                  async (node: any) => {
                     if (node.type) {
                       return {
                         nodeType:
