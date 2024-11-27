@@ -86,12 +86,12 @@ export default function Home() {
           <div className={labelClasses}>Online</div>
           <div className="flex flex-col gap-1">
             <Link
-              href="https://twitter.com/ooneoneo"
+              href="https://bsky.app/profile/krsn.xyz"
               className={linkClasses}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <span className={onlineLabel}>Twitter</span>
+              <span className={onlineLabel}>Bluesky</span>
               <span className={onlineDash}></span>
               <span className={onlineFollow}>Follow</span>
             </Link>
