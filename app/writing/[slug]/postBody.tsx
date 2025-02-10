@@ -1,5 +1,6 @@
 "use client";
 
+import {useEffect} from 'react'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import { BLOCKS, Document } from "@contentful/rich-text-types";
@@ -9,6 +10,7 @@ import {
   oneLight,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useTheme } from "next-themes";
+import css from './article.module.css';
 
 const options = {
   renderNode: {
@@ -60,8 +62,19 @@ const options = {
 };
 
 export default function PostBody({ content }: { content: Document }) {
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(`.${css.article} > *`);
+
+    elements.forEach((element, index) => {
+      const delay = index * 0.06; 
+      element.style.animation = `1s ease ${delay}s 1 both ${css.slideEnter}`;
+    });
+  }, [])
+  
+
   return (
-    <article className="prose dark:prose-invert">
+    <article className={`${css.article} prose dark:prose-invert`}>
       {documentToReactComponents(content, options)}
     </article>
   );
