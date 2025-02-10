@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 const buttonClasses = "text-[12px] w-full px-2 py-1 flex justify-start";
@@ -26,6 +26,11 @@ const buttonClasses = "text-[12px] w-full px-2 py-1 flex justify-start";
 const SideNav = () => {
   const { isOpen, setIsOpen } = useContext(SideNavContext);
   const { setTheme, resolvedTheme } = useTheme();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, [])
 
   return (
     <div
@@ -246,8 +251,7 @@ const SideNav = () => {
               setTheme(resolvedTheme !== "dark" ? "dark" : "light")
             }
           >
-            <Sun className="h-3 w-3 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-3 w-3 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            {isClient ? resolvedTheme === 'dark' ? <Moon className="h-3 w-3" /> : <Sun className="h-3 w-3" /> : null}
           </Button>
         </div>
       </div>
