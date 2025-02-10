@@ -64,7 +64,7 @@ const options = {
 export default function PostBody({ content }: { content: Document }) {
 
   useEffect(() => {
-    const elements = document.querySelectorAll(`.${css.article} > *`);
+    const elements = document.querySelectorAll<HTMLElement>(`.${css.article} > *`);
 
     elements.forEach((element, index) => {
       const delay = index * 0.06; 
