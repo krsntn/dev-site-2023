@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/app/theme-provider";
 import Topbar from "@/app/topbar";
 import { Providers } from "@/src/context/providers";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 export const metadata: Metadata = {
