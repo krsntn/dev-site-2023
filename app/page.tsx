@@ -42,10 +42,10 @@ export default function Home() {
               Hey there, I{`'`}m Karson – a front-end maestro and a total
               keyboard geek. You can catch me hanging out on{" "}
               <Link
-                href="https://www.reddit.com/r/MechanicalKeyboards/"
+                href="https://www.reddit.com/r/ErgoMechKeyboards/"
                 className={link}
               >
-                r/mk
+                r/ErgoMechKeyboards
               </Link>{" "}
               ⌨️
             </p>

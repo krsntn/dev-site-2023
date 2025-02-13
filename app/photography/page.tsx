@@ -1,4 +1,4 @@
-import stack from "@/src/data/photograph_stack.json";
+import { images } from "./images";
 import photos from "@/src/data/photos.json";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,22 +65,15 @@ export default async function Photography() {
         <div className={gridClasses}>
           <div className={labelClasses}>Stack</div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(40px,1fr))] gap-1">
-            {stack.map((x, index) => (
-              <Link
+            {images.map((x, index) => (
+              <Image
                 key={index}
-                href={x.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                className=""
-              >
-                <Image
-                  src={x.image}
-                  alt="logo"
-                  width={40}
-                  height={40}
-                  className="rounded cursor-pointer"
-                />
-              </Link>
+                src={x}
+                alt="logo"
+                width={40}
+                height={40}
+                className="h-[40px] w-[40px] rounded cursor-pointer"
+              />
             ))}
           </div>
         </div>

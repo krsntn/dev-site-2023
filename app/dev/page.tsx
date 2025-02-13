@@ -1,8 +1,8 @@
-import stack from "@/src/data/stack.json";
 import { GithubDataType } from "@/src/lib/writing";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { images } from "./images";
 
 const gridClasses = "grid md:grid-cols-[100px_1fr] gap-2 md:gap-6";
 const labelClasses =
@@ -88,22 +88,15 @@ export default async function Dev() {
         <div className={gridClasses}>
           <div className={labelClasses}>Stack</div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(40px,1fr))] gap-1">
-            {stack.map((x, index) => (
-              <Link
+            {images.map((x, index) => (
+              <Image
                 key={index}
-                href={x.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                className=""
-              >
-                <Image
-                  src={x.image}
-                  alt="logo"
-                  width={40}
-                  height={40}
-                  className="rounded cursor-pointer"
-                />
-              </Link>
+                src={x}
+                alt="logo"
+                width={40}
+                height={40}
+                className="bg-white w-[40px] h-[40px] rounded cursor-pointer"
+              />
             ))}
           </div>
         </div>

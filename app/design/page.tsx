@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import stack from "@/src/data/design_stack.json";
 import Img1 from "@/public/art/1.jpg";
 import Img2 from "@/public/art/2.jpg";
 import Img3 from "@/public/art/3.jpg";
@@ -8,6 +7,7 @@ import Img4 from "@/public/art/4.jpg";
 import Img5 from "@/public/art/5.jpg";
 import Img6 from "@/public/art/6.png";
 import Img7 from "@/public/art/7.png";
+import { images as stacks } from "./images";
 
 const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7];
 
@@ -49,22 +49,15 @@ export default async function Design() {
         <div className={gridClasses}>
           <div className={labelClasses}>Stack</div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(40px,1fr))] gap-1">
-            {stack.map((x, index) => (
-              <Link
+            {stacks.map((x, index) => (
+              <Image
                 key={index}
-                href={x.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                className=""
-              >
-                <Image
-                  src={x.image}
-                  alt="logo"
-                  width={40}
-                  height={40}
-                  className="rounded cursor-pointer"
-                />
-              </Link>
+                src={x}
+                alt="logo"
+                width={40}
+                height={40}
+                className="w-[40px] h-[40px] rounded cursor-pointer"
+              />
             ))}
           </div>
         </div>
