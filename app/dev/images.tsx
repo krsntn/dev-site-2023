@@ -1,5 +1,5 @@
 import IMG_1 from "../../src/assets/images/dev/apple.jpg";
-import IMG_2 from "../../src/assets/images/dev/1111.avif";
+import IMG_2 from "../../src/assets/images/dev/1111.png";
 import IMG_3 from "../../src/assets/images/dev/alacritty.png";
 import IMG_4 from "../../src/assets/images/dev/alfredapp.jpeg";
 import IMG_5 from "../../src/assets/images/dev/anydesk.jpg";
